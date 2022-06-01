@@ -1,4 +1,3 @@
-// console.log("EMPTY");
         // MODEL
         let story = null;
         let altWords = ["Ord 1", "Ord 2", "Ord 3", "Ord 4", "Ord 5", "Ord 6"];
@@ -9,7 +8,8 @@
         // VIEW
         updateView();
         function updateView() {
-            story = /*HTML*/ `Dette er en <span onclick="altWords[0] = storyFunc(this)">${altWords[0]}</span> og 
+            story = /*HTML*/ `
+            Dette er en <span onclick="altWords[0] = storyFunc(this)">${altWords[0]}</span> og 
             <span onclick = "altWords[1] =storyFunc(this)">${altWords[1]}</span> fortelling 
             som vi synes er 
             <span onclick = "altWords[2] =storyFunc(this)">${altWords[2]}</span>
@@ -45,8 +45,7 @@
         function storyFunc(a) {
             if (buttonWord !== null) {
                 a.innerHTML = buttonWord;
-                storyWord = a.innerHTML;
-                //return a;
+                storyWord = a;
             }
         }
 
