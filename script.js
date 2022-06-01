@@ -1,14 +1,14 @@
-        // MODEL
-        let story = null;
-        let altWords = ["Ord 1", "Ord 2", "Ord 3", "Ord 4", "Ord 5", "Ord 6"];
+// MODEL
+let story = null;
+let altWords = ["Ord 1", "Ord 2", "Ord 3", "Ord 4", "Ord 5", "Ord 6"];
 
-        let storyWord = null;
-        let buttonWord = null;
+let storyWord = null;
+let buttonWord = null;
 
-        // VIEW
-        updateView();
-        function updateView() {
-            story = /*HTML*/ `
+// VIEW
+updateView();
+function updateView() {
+    story = /*HTML*/ `
             Dette er en <span onclick="altWords[0] = storyFunc(this)">${altWords[0]}</span> og 
             <span onclick = "altWords[1] =storyFunc(this)">${altWords[1]}</span> fortelling 
             som vi synes er 
@@ -21,8 +21,8 @@
             <span onclick = "altWords[5] =storyFunc(this)">${altWords[5]}</span>
             ferdig.
             `;
-            console.log(story);
-            document.getElementById("app").innerHTML = /*HTML*/ `
+    console.log(story);
+    document.getElementById("app").innerHTML = /*HTML*/ `
             <p>${story}</p>
             <button onclick = "nyView(this)">stor</button>
             <button onclick = "nyView(this)">liten</button>
@@ -34,26 +34,26 @@
             </br>
             <button onclick = "testLog()">TESTINGLOG</button>
             `
-        }
+}
 
-        // CONTROLLER
-        function nyView(eksEmpel) {
-            buttonWord = eksEmpel.innerHTML;
-            console.log(buttonWord + " T");
-        }
+// CONTROLLER
+function nyView(eksEmpel) {
+    buttonWord = eksEmpel.innerHTML;
+    console.log(buttonWord + " T");
+}
 
-        function storyFunc(a) {
-            if (buttonWord !== null) {
-                a.innerHTML = buttonWord;
-                storyWord = a;
-            }
-        }
+function storyFunc(a) {
+    if (buttonWord !== null) {
+        a.innerHTML = buttonWord;
+        storyWord = buttonWord;
+    }
+}
 
 
-        function testLog() {
-            console.log(" Her er buttonword: " + buttonWord);
-            console.log(" Her er storyWord: " + storyWord);
-        }
+function testLog() {
+    console.log(" Her er buttonword: " + buttonWord);
+    console.log(" Her er storyWord: " + storyWord);
+}
         // FLERE TING SOM KAN LEGGES TIL
 
         // Kan bare bruke et ord en gang.
